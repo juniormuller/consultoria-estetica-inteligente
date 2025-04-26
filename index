@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultoria Estética Inteligente</title>
+</head>
+<body>
+    <h1>Consultoria Estética Inteligente</h1>
+
+    <input type="file" id="upload-image" accept="image/*">
+    <button onclick="analisarImagem()">Analisar minha pele</button>
+
+    <div id="resultado" style="margin-top:20px;"></div>
+
+    <script>
+        async function analisarImagem() {
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = "Analisando imagem...";
+
+            // Simulando envio para IA (aqui depois integraremos com OpenAI API ou API real)
+            setTimeout(() => {
+                resultadoDiv.innerHTML = `
+                    <h2>Resultado:</h2>
+                    <p>Detectamos sinais de pele oleosa e algumas manchas solares.<br>
+                    Recomendação: usar protetor solar FPS 50 diariamente, limpar o rosto 2x ao dia com sabonete específico, hidratação noturna com ácido hialurônico leve.</p>
+                `;
+            }, 2000); // Simulação de processamento
+        }
+    </script>
+
+</body>
+</html>
+
