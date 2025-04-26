@@ -1,32 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Consultoria Estética Inteligente</title>
+  <meta charset="UTF-8">
+  <title>Consultoria Estética Inteligente</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f9f9f9, #e3f2fd);
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+    }
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    input[type="file"] {
+      display: block;
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #resultado {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e8f5e9;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Consultoria Estética Inteligente</h1>
 
-    <input type="file" id="upload-image" accept="image/*">
-    <button onclick="analisarImagem()">Analisar minha pele</button>
+<header>
+  Consultoria Estética Inteligente
+</header>
 
-    <div id="resultado" style="margin-top:20px;"></div>
+<main>
+  <h2>Análise de Pele Personalizada</h2>
+  <input type="file" id="upload-image" accept="image/*">
+  <button onclick="analisarImagem()">Analisar minha pele</button>
 
-    <script>
-        async function analisarImagem() {
-            const resultadoDiv = document.getElementById('resultado');
-            resultadoDiv.innerHTML = "Analisando imagem...";
+  <div id="resultado"></div>
+</main>
 
-            // Simulando envio para IA (aqui depois integraremos com OpenAI API ou API real)
-            setTimeout(() => {
-                resultadoDiv.innerHTML = `
-                    <h2>Resultado:</h2>
-                    <p>Detectamos sinais de pele oleosa e algumas manchas solares.<br>
-                    Recomendação: usar protetor solar FPS 50 diariamente, limpar o rosto 2x ao dia com sabonete específico, hidratação noturna com ácido hialurônico leve.</p>
-                `;
-            }, 2000); // Simulação de processamento
-        }
-    </script>
+<footer>
+  © 2025 Consultoria Estética Inteligente - Todos os direitos reservados
+</footer>
+
+<script>
+  async function analisarImagem() {
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = "⏳ Analisando sua imagem... Por favor, aguarde...";
+
+    setTimeout(() => {
+      resultadoDiv.innerHTML = `
+        <h3>Resultado da Análise:</h3>
+        <p>Detectamos sinais de pele mista com tendência à oleosidade na zona T e algumas manchas solares leves.</p>
+        <p><strong>Recomendações:</strong> Limpeza suave 2x ao dia, hidratação oil-free e uso diário de protetor solar FPS 50.</p>
+      `;
+    }, 2500);
+  }
+</script>
 
 </body>
 </html>
